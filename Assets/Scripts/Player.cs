@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float thrust;
+    [SerializeField] private float thrust = 5;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector2.up * thrust;
+        }
+        if (Camera.main.WorldToScreenPoint(transform.position).y < 0)
+        {
+            print("dead");
         }
     }
 
