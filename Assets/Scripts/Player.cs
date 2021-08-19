@@ -7,10 +7,13 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     public static UnityEvent<Player, string> playerDied = new UnityEvent<Player, string>();
+    public static UnityEvent<int> scoreChanged = new UnityEvent<int>();
 
     [SerializeField] private float thrust = 5;
+    private int score = 0;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
+    private void SetColor(Color newColor) => spriteRenderer.color = newColor;
 
     void Start()
     {
@@ -22,18 +25,25 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // check for input
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector2.up * thrust;
         }
+        // check if player has fallen to the floor
         if (Camera.main.WorldToScreenPoint(transform.position).y < 0)
         {
             playerDied?.Invoke(this, "you fell to the floor");
         }
     }
 
-    void SetColor(Color newColor)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        spriteRenderer.color = newColor;
+        if (other.tag == "Score")
+        {
+            Destroy(other.gameObject);
+            score++;
+            scoreChanged?.Invoke(score);
+        }
     }
 }

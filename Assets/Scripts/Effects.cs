@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class Effects : MonoBehaviour
 {
+    [SerializeField] private Animation scoreAnimation;
+    [SerializeField] private ParticleSystem psScore;
     [SerializeField] private ParticleSystem psDeath;
     [SerializeField] private ParticleSystem psDeathFloor;
 
     private void Start()
     {
         Player.playerDied.AddListener(StartParticles);
+        Player.scoreChanged.AddListener(StartScoreEffect);
     }
 
     private void StartParticles(Player player, string message)
@@ -21,5 +24,11 @@ public class Effects : MonoBehaviour
 
         ps.transform.position = player.transform.position;
         ps.Play();
+    }
+
+    private void StartScoreEffect(int newScore)
+    {
+        scoreAnimation.Play();
+        psScore.Play();
     }
 }

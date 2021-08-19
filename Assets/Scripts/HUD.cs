@@ -10,6 +10,7 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         Player.playerDied.AddListener(ShowEndScreen);
+        Player.scoreChanged.AddListener(UpdateScore);
     }
 
     private void UpdateScore(int score)
@@ -17,7 +18,7 @@ public class HUD : MonoBehaviour
         scoreText.SetText(score.ToString());
     }
 
-    public void ShowEndScreen(Player player, string message)
+    private void ShowEndScreen(Player player, string message)
     {
         endScreen.gameObject.SetActive(true);
         endScreen.SetMessage(message);
