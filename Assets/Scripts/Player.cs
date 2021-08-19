@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
+    public static UnityEvent<Player, string> playerDied = new UnityEvent<Player, string>();
+
     [SerializeField] private float thrust = 5;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
@@ -14,6 +17,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         ColorChanger.colorChanged.AddListener(SetColor);
+        playerDied.AddListener((player, message) => Destroy(player.gameObject));
     }
 
     private void Update()
@@ -24,7 +28,7 @@ public class Player : MonoBehaviour
         }
         if (Camera.main.WorldToScreenPoint(transform.position).y < 0)
         {
-            print("dead");
+            playerDied?.Invoke(this, "you fell to the floor");
         }
     }
 

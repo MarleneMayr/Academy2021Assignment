@@ -6,8 +6,10 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private float followThreshold = 1f;
     [SerializeField] private Transform player;
+
     private void Update()
     {
+        if (player == null) return;
         if (player.position.y > (transform.position.y + followThreshold))
         {
             // add the difference the camera is missing from the threshold

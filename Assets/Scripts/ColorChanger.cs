@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class ColorEvent : UnityEvent<Color>
-{
-}
-
 public class ColorChanger : MonoBehaviour
 {
-    public static ColorEvent colorChanged = new ColorEvent();
+    public static UnityEvent<Color> colorChanged = new UnityEvent<Color>();
     [SerializeField] private ColorPalette palette;
     private int index;
 
