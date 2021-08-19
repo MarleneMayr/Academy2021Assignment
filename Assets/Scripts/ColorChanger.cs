@@ -20,16 +20,6 @@ public class ColorChanger : MonoBehaviour
         colorChanged?.Invoke(color);
     }
 
-    private void Update()
-    {
-        // new color on mouse click
-        if (Input.GetMouseButtonDown(0))
-        {
-            var color = palette.Colors[SetRandomNewIndex()];
-            colorChanged?.Invoke(color);
-        }
-    }
-
     private int SetRandomNewIndex()
     {
         // find a random index that is not the current one
