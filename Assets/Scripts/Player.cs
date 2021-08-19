@@ -13,13 +13,16 @@ public class Player : MonoBehaviour
     private int score = 0;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
-    private void SetColor(Color newColor) => spriteRenderer.color = newColor;
+
+    public void SetColor(Color newColor)
+    {
+        spriteRenderer ??= GetComponent<SpriteRenderer>();
+        spriteRenderer.color = newColor;
+    }
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        ColorChanger.colorChanged.AddListener(SetColor);
         playerDied.AddListener((player, message) => Destroy(player.gameObject));
     }
 
