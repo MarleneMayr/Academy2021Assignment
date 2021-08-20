@@ -27,7 +27,7 @@ public class ColorPalette : MonoBehaviour
     public int GetRandomNewIndex(int current)
     {
         // find a random index that is not the current index
-        int newIndex = Random.Range(0, colors.Length);
+        var newIndex = Random.Range(0, colors.Length);
         while (newIndex == current)
         {
             newIndex = Random.Range(0, colors.Length);
