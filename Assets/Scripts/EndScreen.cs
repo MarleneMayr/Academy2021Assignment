@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
@@ -13,9 +14,10 @@ public class EndScreen : MonoBehaviour
 
     private void Update()
     {
-        // restart on mouse click
-        if (Input.GetMouseButtonDown(0))
+        // check for LMB mouse input that is not on UI object
+        if (Input.GetButton("Fire1") && !EventSystem.current.IsPointerOverGameObject())
         {
+            // restart scene on mouse click
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

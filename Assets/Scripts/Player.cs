@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(SpriteRenderer), typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
@@ -27,8 +28,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // check for mouse input
-        if (Input.GetMouseButtonDown(0))
+        // check for LMB mouse input that is not on UI object
+        if (Input.GetButton("Fire1") && !EventSystem.current.IsPointerOverGameObject())
         {
             rb.velocity = Vector2.up * thrust;
         }

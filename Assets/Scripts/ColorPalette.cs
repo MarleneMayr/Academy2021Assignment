@@ -8,10 +8,9 @@ public class ColorPalette : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton pattern that keeps the containing gameobject alive
+        // Singleton pattern
         if (instance == null)
         {
-            DontDestroyOnLoad(gameObject);
             instance = this;
         }
         else if (instance != this)
