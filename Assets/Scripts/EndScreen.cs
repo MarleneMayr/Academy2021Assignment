@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    [SerializeField] private TMPro.TextMeshProUGUI text;
+    [SerializeField] private TMPro.TextMeshProUGUI textmessage;
 
     private void Start()
     {
@@ -24,6 +24,6 @@ public class EndScreen : MonoBehaviour
 
     public void SetMessage(string message)
     {
-        text.SetText(message);
+        textmessage.SetText(message);
     }
 }

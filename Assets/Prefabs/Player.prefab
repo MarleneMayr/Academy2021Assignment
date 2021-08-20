@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5653249435054062300}
   - component: {fileID: 5653249435054062301}
   - component: {fileID: 5653249435054062274}
-  - component: {fileID: 2541970458277455593}
   - component: {fileID: 6531211491084236592}
   - component: {fileID: 5653249435054062303}
   m_Layer: 0
@@ -101,19 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 5
---- !u!114 &2541970458277455593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5653249435054062275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ffd75ccdf20c649b83d7cb887d20ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  palette: {fileID: 11400000, guid: 1878ab71421357944819eebe762b5322, type: 2}
 --- !u!58 &6531211491084236592
 CircleCollider2D:
   m_ObjectHideFlags: 0
