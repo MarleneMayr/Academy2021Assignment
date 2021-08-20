@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public static UnityEvent<Player, string> playerDied = new UnityEvent<Player, string>();
     public static UnityEvent<int> scoreChanged = new UnityEvent<int>();
+    public static UnityEvent<int> colorChanged = new UnityEvent<int>();
 
     [SerializeField] private float thrust = 5;
     private int score = 0;
@@ -63,7 +64,9 @@ public class Player : MonoBehaviour
     {
         colorIndex = ColorPalette.instance.GetRandomNewIndex(colorIndex);
         SetColor(ColorPalette.instance.Colors[colorIndex]);
+        colorChanged?.Invoke(colorIndex);
     }
+
     private void CheckObstacle(Obstacle obstacle)
     {
         if (colorIndex != obstacle.colorIndex)
