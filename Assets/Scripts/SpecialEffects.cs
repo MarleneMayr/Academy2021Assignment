@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Effects : MonoBehaviour
+public class SpecialEffects : MonoBehaviour
 {
     [Header("Animations")]
     [SerializeField] private Animation scoreAnimation;

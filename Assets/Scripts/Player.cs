@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
                 UpdatePlayerColor();
                 break;
             case "Obstacle":
-                CheckObstacle(other.GetComponent<Obstacle>());
+                CheckObstacle(other.GetComponent<ObstacleColor>());
                 break;
         }
     }
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         colorChanged?.Invoke(colorIndex);
     }
 
-    private void CheckObstacle(Obstacle obstacle)
+    private void CheckObstacle(ObstacleColor obstacle)
     {
         if (colorIndex != obstacle.colorIndex)
         {

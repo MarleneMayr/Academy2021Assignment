@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Obstacle : MonoBehaviour
+public class ObstacleColor : MonoBehaviour
 {
     public int colorIndex;
 

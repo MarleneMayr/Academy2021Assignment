@@ -8,7 +8,7 @@ enum ItemType
     Obstacle
 }
 
-public class Spawner : MonoBehaviour
+public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] private float spawnDistance;
@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        // stop spawning at player death
+        // register stop spawning at player death
         Player.playerDied.AddListener((player, message) => Destroy(gameObject));
 
         playerReferencePos = player.position;

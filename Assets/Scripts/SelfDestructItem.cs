@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CleanUpItem : MonoBehaviour
+public class SelfDestructItem : MonoBehaviour
 {
     private readonly float threshold = -5;
 
