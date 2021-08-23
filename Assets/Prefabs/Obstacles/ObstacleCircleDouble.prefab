@@ -52,17 +52,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4100309476297827874}
     m_Modifications:
-    - target: {fileID: 2027763380499638702, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: colorIndex
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2211954399968626836, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
       propertyPath: m_Name
       value: ObstacleCircleOuter
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211954399968626836, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 2211954399968626837, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
       propertyPath: m_RootOrder
@@ -108,14 +100,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3834365751247810550, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: colorIndex
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4014496486018400246, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: colorIndex
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
 --- !u!4 &8698592349596075205 stripped
@@ -130,10 +114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4100309476297827874}
     m_Modifications:
-    - target: {fileID: 2027763380499638702, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: colorIndex
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2211954399968626836, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
       propertyPath: m_Name
       value: ObstacleCircleInner
@@ -193,14 +173,6 @@ PrefabInstance:
     - target: {fileID: 2211954399968626837, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3834365751247810550, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: colorIndex
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4014496486018400246, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
-      propertyPath: colorIndex
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12c5fd0ee26f3c145a1ffbff98301016, type: 3}
